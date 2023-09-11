@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+//void fileRead(ofstream &);
+
+int main()
+{
+    fstream startFile;
+//    fstream endFile
+    
+    string joke, punch;
+    
+    joke = "Why did the two basketballs not want to play with the third ball?";
+    punch = "Because it was the oddball!";
+    
+    
+    startFile << joke <<endl;
+    
+    startFile.open("joke.txt", ios::in);
+    string line;
+    while (startFile >> line)
+    {
+        getline(startFile, line);
+        cout << line;
+    }
+//    endFile << "garbage \n" << punch <<endl;
+    
+//    fileRead(startFile);
+}
+
